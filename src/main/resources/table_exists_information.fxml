@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="171.0" prefWidth="519.0" stylesheets="@modena_dark.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TableExistsInformation">
+  <children>
+    <Label layoutX="13.0" layoutY="23.0" prefHeight="17.0" prefWidth="493.0" stylesheets="@modena_dark.css" text="Требуется дополнительная информация. Заданная таблица существует. Выберите что" />
+    <Label layoutX="13.0" layoutY="40.0" prefHeight="17.0" prefWidth="152.0" text="сделать с данными:" />
+    <Button layoutX="89.0" layoutY="124.0" mnemonicParsing="false" onAction="#okExtraInf" prefHeight="25.0" prefWidth="125.0" text="ОК" />
+    <Button layoutX="285.0" layoutY="124.0" mnemonicParsing="false" onAction="#cancelExtraInf" prefHeight="25.0" prefWidth="144.0" text="Отмена" />
+    <ChoiceBox fx:id="chooseWhatToDo" layoutX="104.0" layoutY="76.0" prefHeight="25.0" prefWidth="270.0">
+      <items>
+        <FXCollections fx:factory="observableArrayList">
+          <String fx:value="Не удалять данные" />
+          <String fx:value="Удалить существующие данные" />
+        </FXCollections>
+      </items>
+    </ChoiceBox>
+  </children>
+</AnchorPane>

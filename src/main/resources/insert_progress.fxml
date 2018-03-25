@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="161.0" prefWidth="525.0" stylesheets="@modena_dark.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InsertProgress">
+   <children>
+      <Button fx:id="done" layoutX="188.0" layoutY="122.0" mnemonicParsing="false" onAction="#progressDone" prefHeight="25.0" prefWidth="151.0" text="OK" />
+      <Label fx:id="supportText" layoutX="28.0" layoutY="38.0" prefHeight="17.0" prefWidth="403.0" text="Идет процесс записи файла в базу данных. Пожалуйста, подождите....." />
+      <ProgressBar fx:id="progressBar" layoutX="24.0" layoutY="72.0" prefHeight="35.0" prefWidth="483.0" progress="0.0" />
+   </children>
+</AnchorPane>

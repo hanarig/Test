@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="662.0" prefWidth="600.0" stylesheets="@modena_dark.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainWindow">
+  <children>
+    <Label fx:id="chooseFileArea" layoutX="37.0" layoutY="21.0" mouseTransparent="true" prefHeight="25.0" prefWidth="188.0" stylesheets="@modena_dark.css" text="Конвертер CSV файлов">
+         <effect>
+            <DropShadow color="#002dff" />
+         </effect>
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font></Label>
+    <Button fx:id="start_button" layoutX="329.0" layoutY="617.0" mnemonicParsing="false" onAction="#startConvertation" prefHeight="25.0" prefWidth="221.0" text="Провести конвертацию">
+         <effect>
+            <DropShadow />
+         </effect></Button>
+      <Accordion />
+      <SplitPane dividerPositions="0.3252336448598131, 0.5570093457943925, 0.7981308411214953" layoutX="32.0" layoutY="62.0" orientation="VERTICAL" prefHeight="537.0" prefWidth="518.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="88.0" prefWidth="201.0" stylesheets="@modena_dark.css">
+               <children>
+                <Label layoutX="55.0" layoutY="66.0" prefHeight="17.0" prefWidth="160.0" text="Выбор CSV-файла :" />
+                <Button fx:id="choose_file" layoutX="55.0" layoutY="103.0" mnemonicParsing="false" onAction="#chooseFile" text="Обзор файлов">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+                <ChoiceBox fx:id="lineSeparator" layoutX="266.0" layoutY="96.0" prefWidth="150.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value=";" />
+                      <String fx:value="," />
+                      <String fx:value="_" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+                <Label layoutX="266.0" layoutY="66.0" prefHeight="17.0" prefWidth="149.0" text="Разделитель строк :" />
+                  <Label layoutX="32.0" layoutY="26.0" prefHeight="20.0" prefWidth="448.0" text="1 Этап. Выберите CSV-файл и настройте разделитель строк:">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pathTextLabel" disable="true" layoutX="56.0" layoutY="141.0" text="Путь к файлу: ">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pathToFile" disable="true" layoutX="161.0" layoutY="141.0" prefHeight="15.0" prefWidth="345.0" text="Файл не выбран">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+          <AnchorPane prefHeight="119.0" prefWidth="516.0">
+               <children>
+                  <Label layoutX="58.0" layoutY="52.0" prefHeight="17.0" prefWidth="160.0" text="Проверить заданный файл:" />
+                  <Button fx:id="clickReadFile" layoutX="58.0" layoutY="78.0" mnemonicParsing="false" onAction="#readFile" prefHeight="25.0" prefWidth="121.0" text="Считывание файла">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+                  <Label fx:id="separatorStatus" layoutX="280.0" layoutY="70.0" prefHeight="17.0" prefWidth="150.0" />
+                  <Label fx:id="readFileStatus" layoutX="280.0" layoutY="70.0" prefHeight="17.0" prefWidth="179.0" />
+                  <Label layoutX="27.0" layoutY="18.0" text="2 Этап. Проверьте корректность чтения файла:">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="126.0" prefWidth="516.0">
+               <children>
+                <Button fx:id="clickDBConfig" layoutX="53.0" layoutY="82.0" mnemonicParsing="false" onAction="#dbConfig" text="Задать настройки">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+                <Label layoutX="53.0" layoutY="54.0" prefHeight="17.0" prefWidth="188.0" text="Конфигурация базы данных :" />
+                  <Label fx:id="configurationStatus" layoutX="261.0" layoutY="74.0" prefHeight="17.0" prefWidth="160.0" />
+                  <Label fx:id="csvStatus" layoutX="258.0" layoutY="74.0" prefHeight="17.0" prefWidth="149.0" />
+                  <Label layoutX="32.0" layoutY="23.0" text="3 Этап. Настройте соединение с БД:">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="110.0" prefWidth="516.0">
+               <children>
+                <Label layoutX="54.0" layoutY="48.0" text="Название таблицы:" />
+                <TextField fx:id="tableName" layoutX="52.0" layoutY="71.0" />
+                  <Label fx:id="tableNameStatus" layoutX="256.0" layoutY="75.0" prefHeight="17.0" prefWidth="233.0" />
+                  <Label layoutX="28.0" layoutY="14.0" text="4 Этап. Задайте название таблицы в БД:">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+  </children>
+</AnchorPane>
